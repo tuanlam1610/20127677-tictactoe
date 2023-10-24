@@ -4,7 +4,7 @@ function Square({ isInWinningLine, value, onSquareClick }) {
   return (
     <button
       className="square"
-      style={{ backgroundColor: isInWinningLine ? "red" : "none" }}
+      style={{ backgroundColor: isInWinningLine ? "red" : "#fff" }}
       onClick={onSquareClick}
     >
       {value}
@@ -88,7 +88,8 @@ export default function Game() {
       );
 
       description =
-        "Go to move #" +
+        (move === currentMove ? "You are at" : "Go to move") +
+        " #" +
         move +
         ` (row,col) : (${Math.floor(differentIndex / 3) + 1},${
           (differentIndex % 3) + 1
